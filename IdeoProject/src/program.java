@@ -1,8 +1,17 @@
+import com.sun.java.swing.*;
+import javax.swing.*;
+
+
 
 public class program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		form myform = new form("Thought Test");
+		
+		myform.setVisible(true);
+		
+		
 
 	}
 
