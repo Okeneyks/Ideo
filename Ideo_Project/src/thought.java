@@ -9,9 +9,12 @@ public class thought {
 		// Array of strings that represent tags for a thought
 		private ArrayList<String> tagList;
 			//access methods
-			public ArrayList<String> get_tagList(){
+			public ArrayList<String> get_tagList_inFull(){
 				return this.tagList;
 				}
+			public String get_tagList_partial(int index){
+				return this.tagList.get(index);
+			}
 			public void set_tagList(int position, String text ){ 
 				this.tagList.set(position, text);
 				}
@@ -56,6 +59,11 @@ public class thought {
 		content = thoughtContent;
 		dateCreated = Thoughtdate;
 	}
+	
+	public thought(){
+	}
+	
+	
+	}
 		
 
-}
