@@ -30,7 +30,10 @@ public class thought {
 				tagList.clear();
 				return;
 			}
-			
+			// shared_tags(T): returns all tags in common with thought T
+			public Set<String> shared_tags(thought T) {
+				return tagList.retainAll(T);
+			}
 		// The title of a thought
 		private String title;
 			//access methods
