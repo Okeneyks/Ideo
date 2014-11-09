@@ -25,6 +25,10 @@ public class thought {
 				if tagList.contains(tag) return true;
 				else return false;
 			}
+			public void clearTags(){
+				tagList.clear();
+				return;
+			}
 			
 		// The title of a thought
 		private String title;
