@@ -20,11 +20,12 @@ public class thought {
 			public boolean removeTag(String tag) {
 				return tagList.remove(tag); // returns TRUE if tag was removed
 			}
-			// containsTag(a): returns TRUE if tag is contained in tagList
+			// containsTag(tag): returns TRUE if tag is contained in tagList
 			public boolean containsTag(String tag) {
 				if tagList.contains(tag) return true;
 				else return false;
 			}
+			// clearTags(): removes all elements in tagList
 			public void clearTags(){
 				tagList.clear();
 				return;
