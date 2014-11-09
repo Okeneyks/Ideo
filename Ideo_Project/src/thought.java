@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Set;
 import java.util.Date;
 
 
@@ -6,19 +6,26 @@ public class thought {
 	
 	// Class thought: Properties----------------------------------------------------------------------
 	
-		// Array of strings that represent tags for a thought
-		private ArrayList<String> tagList;
-			//access methods
-			public ArrayList<String> get_tagList_inFull(){
-				return this.tagList;
-				}
-			public String get_tagList_partial(int index){
-				return this.tagList.get(index);
+		// tagList: Set of strings (tags for the thought)
+		private Set<String> tagList;
+			// get_tagList(): accessor for tagList
+			public Set<String> get_tagList() {
+				return tagList;
 			}
-			public void set_tagList(int position, String text ){ 
-				this.tagList.set(position, text);
-				}
-		
+			// addTag(tag): adds tag to tagList
+			public boolean addTag(String tag) {
+				return tagList.add(tag); // returns TRUE if tag was added
+			}
+			// removeTag(tag): removes tag from tagList
+			public boolean removeTag(String tag) {
+				return tagList.remove(tag); // returns TRUE if tag was removed
+			}
+			// containsTag(a): returns TRUE if tag is contained in tagList
+			public boolean containsTag(String tag) {
+				if tagList.contains(tag) return true;
+				else return false;
+			}
+			
 		// The title of a thought
 		private String title;
 			//access methods
@@ -49,21 +56,34 @@ public class thought {
 				this.dateCreated = thoughtCreatedDate;
 			}
 
-		
-		
-		
-		
-	public thought(ArrayList<String> tags, String thoughtTitle, String thoughtContent, Date Thoughtdate ){
-		tagList = tags;
-		title = thoughtTitle;
-		content = thoughtContent;
-		dateCreated = Thoughtdate;
-	}
-	
-	public thought(){
-	}
-	
-	
-	}
+	// constructors	
+		// full
+		public thought(Set<String> tags, String thoughtTitle, String thoughtContent, Date Thoughtdate ){
+			tagList = tags;
+			title = thoughtTitle;
+			content = thoughtContent;
+			dateCreated = Thoughtdate;
+		}
+		// these constructors use the current time when they are called
+		public thought(String thoughtContent, Set<String> tags) {
+			content = thoughtContent;
+			tagList = tags;
+			dateCreated = new Date();
+		}
+		public thought(String thoughtContent) {
+			content = thoughtContent;
+			dateCreated = new Date();
+		}
+		public thought() {
+			content = "empty";
+			dateCreated = new Date();
+		}
+		// copy constructor for duplicating a thought
+		public thought(thought T) {
+			content = T.get_content();
+			tagList = T.get_tagList();
+			dateCreated = T.get_dateCreated();
+		}
+}
 		
 
