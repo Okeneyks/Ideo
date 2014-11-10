@@ -1,3 +1,5 @@
+package com.Ideo;
+
 import java.util.Set;
 import java.util.Date;
 
@@ -22,7 +24,9 @@ public class thought {
 			}
 			// containsTag(tag): returns TRUE if tag is contained in tagList
 			public boolean containsTag(String tag) {
-				if tagList.contains(tag) return true;
+				if(tagList.contains(tag)){ 
+					return true;
+				}
 				else return false;
 			}
 			// clearTags(): removes all elements in tagList
@@ -32,7 +36,9 @@ public class thought {
 			}
 			// shared_tags(T): returns all tags in common with thought T
 			public Set<String> shared_tags(thought T) {
-				return tagList.retainAll(T);
+				Set<String> temp = T.get_tagList();
+				temp.retainAll(tagList);
+				return temp;
 			}
 		// The title of a thought
 		private String title;
@@ -93,5 +99,3 @@ public class thought {
 			dateCreated = T.get_dateCreated();
 		}
 }
-		
-
