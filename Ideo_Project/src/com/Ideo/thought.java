@@ -69,8 +69,12 @@ public class thought {
 			public void set_dateCreated(Date thoughtCreatedDate){
 				this.dateCreated = thoughtCreatedDate;
 			}
+			
+	// -----------------------------------------------------------------------------------------
+			
+			
 
-	// constructors	
+	// class thought: constructors	------------------------------------------------------------
 		// full
 		public thought(Set<String> tags, String thoughtTitle, String thoughtContent, Date Thoughtdate ){
 			tagList = tags;
